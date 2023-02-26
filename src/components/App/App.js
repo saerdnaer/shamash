@@ -32,8 +32,6 @@ import { print } from '../../utils/graphqlPrinter';
 
 import Map from '../Map';
 
-import whiteLogo from 'static/images/entur-white.png';
-import normalLogo from 'static/images/entur.png';
 
 import { NotFound } from './404';
 
@@ -259,13 +257,7 @@ export const App = ({ pathname, parameters, setParameters }) => {
           onEditVariables={(value) => editParameter('variables', value)}
           onEditOperationName={(value) => editParameter('operationName', value)}
         >
-          <GraphiQL.Logo>
-            <img
-              alt="logo"
-              src={getPreferredTheme() === 'dark' ? whiteLogo : normalLogo}
-              className="logo"
-            />
-          </GraphiQL.Logo>
+          <GraphiQL.Logo />
           <GraphiQL.Toolbar>
             <GraphiQL.Button
               onClick={handleClickPrettifyButton}
